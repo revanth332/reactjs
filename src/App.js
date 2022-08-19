@@ -1,23 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import {useEffect} from 'react';
+import Card from './Card';
+import Table from './Table'
 
 function App() {
+  let [data,setData] = useState(
+    [
+      {
+        name:"Revanth",
+        quality:"polite",
+        visible:true
+      },  
+      {
+        name:"Rahul",
+        quality:"good",
+        visible:true
+      },
+      {
+        name:"veer",
+        quality:"sweet",
+        visible:true
+      }
+    ]
+  )
+  function removeItem() {
+     setData([]);
+     console.log(data);
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React js Table assignment</h1>
+      <Table />
     </div>
   );
 }
